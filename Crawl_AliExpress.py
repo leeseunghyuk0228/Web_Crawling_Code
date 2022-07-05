@@ -4,7 +4,7 @@ import urllib.parse
 import pandas as pd
 import requests
 from bs4 import BeautifulSoup as bs
-
+op=re.compile('\r|\n|\t|Color:|Ships From:|Logistics:')
 headers = {
     'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.95 Safari/537.36',
 }
@@ -26,6 +26,7 @@ params = {
             'withPictures':  'true' if False else 'false',
             'page': 1
         }
+
 url = f"{feedback_uri}?{urllib.parse.urlencode(params)}"
 response=requests.post(url,params=params)
 res=requests.get(url,headers=headers)
@@ -33,6 +34,7 @@ hs1=bs(res.text,'html.parser')
 base_url=url[:-1]
 
 star,option1,option2,option3,text,date,Help_Y,Help_N=[],[],[],[],[],[],[],[]
+
 for u in range(1,15):
     page_url=base_url+str(u)
     res=requests.get(url,headers=headers)
