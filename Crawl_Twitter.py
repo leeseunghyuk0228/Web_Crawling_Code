@@ -12,7 +12,6 @@ last_page_height = driver.execute_script("return document.documentElement.scroll
 html_source = ''
 
 time.sleep(3)
-# document.documentElement.scrollHeight
 
 for i in range(0, 5000):
     element = driver.find_element_by_tag_name('body')
@@ -26,20 +25,6 @@ for i in range(0, 5000):
             break
         last_page_height = new_page_height
 time.sleep(3)
-
-#     for n in range(30,19,-1):
-#         print(n)
-#         try:
-#             driver.find_element_by_xpath(f'/html/body/div/div/div/div[2]/main/div/div/div/div/div/div[2]/div/section/div/div/div[{n}]/div/div/div').click()
-#         except:
-#             pass
-# if new_page_height == last_page_height:
-# #         try:
-# #             driver.find_element_by_xpath('/html/body/div/div/div/div[2]/main/div/div/div/div/div/div[2]/\
-# #             div/section/div/div/div[24]/div/div').click()
-# #         except:
-#     break
-# last_page_height = new_page_height
 
 html_source += driver.page_source
 
