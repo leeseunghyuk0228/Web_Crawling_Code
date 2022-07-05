@@ -8,7 +8,9 @@ from bs4 import BeautifulSoup as bs
 headers = {
     'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.95 Safari/537.36',
 }
+
 feedback_uri = "https://feedback.aliexpress.com/display/productEvaluation.htm"
+
 owenerMemberID='2'+str(random.choice(range(0,9)))
 companyID='2'+str(random.choice(range(0,9)))
 
